@@ -19,13 +19,11 @@ public class App {
 			}
 		} while (!correcto);
 
-		int res = base;
-		if (exp == 0)
-			res = 1;
-		else {
-			for (int i = 1; i < exp; i++)
+		int res = 1;
+		if (exp != 0)
+			for (int i = 1; i < Math.abs(exp); i++)
 				res *= base;
-		}	
-		System.out.printf("%d^%d = %d%n", base, exp, res);
+		System.out.println(base + "^" + exp + " = %.2f", (exp >= 0) ? res : (1.0 / res));
+		// System.out.printf("%d^%d = %d%n", base, exp, res);
     }
 }
